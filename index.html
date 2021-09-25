@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="css/fontawesome.css">
+    <!--   Calling fontawesome from local file   -->
+
+    <link rel="stylesheet" type="text/css" href="css/bulma.css">
+    <!--   Calling Bulma from local file   -->
+
+    <script type="text/javascript" src="js/vue.js"></script>
+    <!--   Calling Vue from local file   -->
+    <!-- <script type="text/javascript" src="js/axios.min.js"></script> -->
+    <!--   Calling Axios from local file   -->
+
+
+    <link rel="stylesheet" href="css/game.css">
+    <!--  Adding custom CSS file for all tags in this file  -->
+
+    <title>Game</title>
+</head>
+
+<body>
+
+    <div class="full-page-container" id="main-page-container-id">
+
+        <div class="main-content-container columns is-centered is-multiline is-mobile has-text-centered">
+            <div class="score-container column is-half">
+                <p>SCORE</p>
+                <p>[[totalScore]]</p>
+            </div>
+
+            <div class="score-container column is-half">
+                <p>BEST</p>
+                <p>384</p>
+            </div>
+
+            <div class="game-box-container column is-full">
+                <div class="game-box-area-container">
+                    <div class="game-row-container" v-for="row in matrix">
+                        <div class="game-element-container" v-for="element in row">
+                            <div class="game-element" :class="[{'element-2':element==2},{'element-4':element==4},{'element-8':element==8},{'element-16':element==16},{'element-32':element==32},{'element-64':element==64},{'element-128':element==128}]">
+                                <span>[[element]]</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="restart-container column is-full">
+                <button class="button is-link">
+                    Restart
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+
+</html>
